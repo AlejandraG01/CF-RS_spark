@@ -9,7 +9,7 @@ Created on Wed Nov 29 11:31:55 2017
 from pyspark.mllib.recommendation import ALS, MatrixFactorizationModel, Rating
 
 # Load and parse the data
-data = sc.textFile("data/mllib/als/test.data")
+data = sc.textFile("/opt/spark/data/mllib/als/test.data")
 ratings = data.map(lambda l: l.split(','))\
     .map(lambda l: Rating(int(l[0]), int(l[1]), float(l[2])))
 
